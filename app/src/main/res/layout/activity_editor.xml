@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/surface"
+            app:titleTextColor="@color/on_surface" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- PDF görünümü + çizim katmanı -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.github.barteksc.pdfviewer.PDFView
+                android:id="@+id/pdfView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.pdfeditor.app.ui.views.DrawingOverlayView
+                android:id="@+id/drawingOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/tvError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/error_opening_file"
+                android:textColor="@color/error"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <!-- Alt araç çubuğu -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/surface"
+            android:elevation="4dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp">
+
+                <!-- Kalem -->
+                <ImageButton
+                    android:id="@+id/btnPen"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@android:drawable/ic_menu_edit"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/tool_pen"
+                    android:padding="8dp"
+                    android:layout_margin="2dp" />
+
+                <!-- Işıklandırıcı -->
+                <ImageButton
+                    android:id="@+id/btnHighlighter"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@android:drawable/ic_menu_view"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/tool_highlighter"
+                    android:padding="8dp"
+                    android:layout_margin="2dp" />
+
+                <!-- Metin -->
+                <ImageButton
+                    android:id="@+id/btnText"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@android:drawable/ic_menu_agenda"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/tool_text"
+                    android:padding="8dp"
+                    android:layout_margin="2dp" />
+
+                <!-- İmza -->
+                <ImageButton
+                    android:id="@+id/btnSignature"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@android:drawable/ic_menu_myplaces"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/tool_signature"
+                    android:padding="8dp"
+                    android:layout_margin="2dp" />
+
+                <!-- Şekiller -->
+                <ImageButton
+                    android:id="@+id/btnShapes"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@android:drawable/ic_menu_crop"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/tool_shapes"
+                    android:padding="8dp"
+                    android:layout_margin="2dp" />
+
+                <!-- Silgi -->
+                <ImageButton
+                    android:id="@+id/btnEraser"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/tool_eraser"
+                    android:padding="8dp"
+                    android:layout_margin="2dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="32dp"
+                    android:background="@color/divider"
+                    android:layout_margin="4dp" />
+
+                <!-- Geri al -->
+                <ImageButton
+                    android:id="@+id/btnUndo"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/undo"
+                    android:padding="8dp"
+                    android:layout_margin="2dp" />
+
+                <!-- Yinele -->
+                <ImageButton
+                    android:id="@+id/btnRedo"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@android:drawable/ic_media_next"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/redo"
+                    android:padding="8dp"
+                    android:layout_margin="2dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="32dp"
+                    android:background="@color/divider"
+                    android:layout_margin="4dp" />
+
+                <!-- Renk seçici -->
+                <View
+                    android:id="@+id/btnColor"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="#000000"
+                    android:layout_margin="6dp" />
+
+                <!-- Çizgi kalınlığı -->
+                <ImageButton
+                    android:id="@+id/btnStrokeWidth"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@android:drawable/ic_menu_zoom"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/stroke_width"
+                    android:padding="8dp"
+                    android:layout_margin="2dp" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
