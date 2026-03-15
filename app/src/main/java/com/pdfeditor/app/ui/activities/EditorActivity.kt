@@ -12,8 +12,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.lifecycle.lifecycleScope
-import com.github.barteksc.pdfviewer.PDFView
-import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle
+import com.rajat.pdfviewer.PdfRenderer
 import com.pdfeditor.app.R
 import com.pdfeditor.app.databinding.ActivityEditorBinding
 import com.pdfeditor.app.ui.dialogs.SignatureDialog
