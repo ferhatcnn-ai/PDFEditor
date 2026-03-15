@@ -25,6 +25,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        dataBinding false
     }
 
     compileOptions {
@@ -54,7 +55,7 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
     // PDF görüntüleme - AndroidPdfViewer (PdfiumAndroid tabanlı)
-    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.8'
 
     // PDF düzenleme - iTextPDF (AGPL)
     implementation 'com.itextpdf:itext7-core:7.2.5'
