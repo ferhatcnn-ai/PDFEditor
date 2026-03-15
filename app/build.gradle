@@ -62,7 +62,7 @@ dependencies {
    
 
   // PDF görüntüleme - Maven Central'da mevcut
-implementation 'io.github.afreakyelf:Pdf-Viewer:2.1.1'
+implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 
 // İmza pedi - Maven Central
 implementation 'com.github.gcacace:signature-pad:1.3.1'
