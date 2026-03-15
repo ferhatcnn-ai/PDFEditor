@@ -55,7 +55,7 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
     // PDF görüntüleme - AndroidPdfViewer (PdfiumAndroid tabanlı)
-    implementation 'com.github.barteksc:android-pdf-viewer:2.8.8'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 
     // PDF düzenleme - iTextPDF (AGPL)
     implementation 'com.itextpdf:itext7-core:7.2.5'
